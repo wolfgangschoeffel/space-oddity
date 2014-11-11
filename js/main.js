@@ -19,7 +19,6 @@ window.addEventListener('resize', dResize);
 
 window.addEventListener('load', function(){
     resize();
-    classie.remove( document.body, 'loading' );
 });
 
 
@@ -36,6 +35,7 @@ function initMap() {
 
     google.maps.event.addListenerOnce(map, 'idle', function(){
         getCoordinates();
+        classie.remove( document.body, 'loading' );
     });
 }
 
@@ -113,3 +113,8 @@ function move_iss(data){
 
     setTimeout(getCoordinates, 5000);
 }
+
+
+
+
+
