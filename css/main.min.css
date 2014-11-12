@@ -159,6 +159,9 @@ header {
     height: 40px; }
   header .english {
     float: left; }
+  header img {
+    height: 100%;
+    width: auto; }
   header .hebrew {
     float: right; }
   header svg {
