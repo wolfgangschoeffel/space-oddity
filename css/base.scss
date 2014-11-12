@@ -71,6 +71,8 @@ img {
 
     @include transition( opacity 1s ease );
 
+    z-index: 0;
+
     &.active {
         opacity: 1;
         //visibility: visible;
@@ -190,6 +192,9 @@ header {
     z-index: 1;
     padding: 120px;
     padding-bottom: 50px;
+
+    @include transform( translate3d(0,0,0) );
+    @include backface-visibility( 'hidden' );
 }
 
 section {
