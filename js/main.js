@@ -85,7 +85,7 @@ function move_iss(data){
             .to( { lat: lat, lng: lng }, deltaT )
             .onUpdate( function(){
 
-                console.log( this.lat );
+                //console.log( this.lat );
                 display.lat.innerHTML = 'Lat:&nbsp;' + this.lat.toFixed(6);
                 display.lng.innerHTML = 'Long:&nbsp;' + this.lng.toFixed(6);
 

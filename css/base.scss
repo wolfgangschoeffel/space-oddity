@@ -321,127 +321,215 @@ h2 {
 }
 
 
-.supporters {
-    margin-bottom: 18px;
 
-    h2 {
-        font-family: 'albrecht-60';
-    }
-
-    > div {
-        position: relative;
-        float: left;
-        width: 33%;
-        height: 130px;
-    }
-
-    .link-wrapper {
-        height: 60px;
-        bottom: 0;
-        position: absolute;
-        width: 100%;
-    }
-
-    .credits {
-        width: 10%;
-    }
-
-    .thanks {
-        width: 23%;
-    }
-
-    a {
-        display: block;
-        position: relative;
-        height: 60px;
-        opacity: 0.75;
-        @include transition( opacity 0.2s ease );
-        &:hover {
-            opacity: 1;
-        }
-    }
-
-    .fabercastell-logo, .nuernberg-logo, .woehrl-logo, .zerbock-logo {
-        width: 50%;
-        float: left;
-    }
-
-    .foerderbank-logo, .unfun-logo {
-        width: 100%;
-    }
-
-   /*  a {
-        display: block;
-        width: 50%;
-        float: left;
-        opacity: 0.75;
-        background: red;
-        height: 50px;
-
-        @include transition( opacity 0.2s ease );
-        &:hover {
-            opacity: 1;
-        }
-    } */
-
-    .credits {
-        text-align: right;
-    }
-
-    img {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: auto;
-    }
-
-}
 
 
 
 .fabercastell-logo {
     img {
-        height: 60px;
+        height: 48px;
     }
 
 }
 
 .nuernberg-logo {
     img {
-        height: 60px;
+        height: 48px;
     }
 
 }
 
 .woehrl-logo {
     img {
-        height: 40px;
+        height: 29px;
     }
 
 }
 
 .zerbock-logo {
     img {
-        height: 60px;
+        height: 43px;
     }
 
 }
 
 .foerderbank-logo {
     img {
-        height: 55px;
+        height: 34px;
+    }
+
+}
+
+.grundig-logo {
+    img {
+        height: 15px;
+    }
+
+}
+
+.sattler_und_poetzsch-logo {
+
+    img {
+        height: 17px;
     }
 
 }
 
 .unfun-logo {
     img {
-        left: auto;
-        right: 0;
-        height: 38px;
+        height: 21px;
     }
 }
+
+.supporters {
+
+    h2 {
+        font-family: 'albrecht-60';
+        margin-bottom: 20px;
+    }
+
+    > div {
+        width: 100%;
+    }
+
+    img {
+        width: auto;
+    }
+
+    a {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .link-wrapper {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+@media screen and (min-width: 640px ){
+
+    .supporters {
+
+        a {
+
+            position: relative;
+            width: 50%;
+            float: left;
+            height: 100%;
+
+            opacity: 0.75;
+            @include transition( opacity 0.2s ease );
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        img {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .foerderbank-logo, .grundig-logo, .sattler_und_poetzsch-logo {
+            width: 33.3%;
+        }
+
+
+        .link-wrapper {
+            height: 50px;
+            margin-bottom: 50px;
+        }
+    }
+
+}
+
+ @media screen and (min-width: 900px ){
+
+    .supporters {
+        > div {
+            width: 50%;
+            float: left;
+        }
+
+
+        .thanks {
+            width: 70%;
+        }
+
+        .credits {
+            width: 30%;
+            text-align: right;
+
+            a {
+                float: right;
+            }
+        }
+
+        .unfun-logo img {
+            left: auto;
+            right: 0;
+        }
+    }
+ }
+
+
+
+
+ @media screen and (min-width: 1500px ){
+
+    .supporters {
+
+        .permanent {
+            width: 27%;
+        }
+
+        .further {
+            width: 22%;
+        }
+
+        .thanks {
+            width: 42%;
+        }
+
+        .credits {
+            text-align: right;
+
+            a {
+                float: right;
+            }
+            width: 9%;
+        }
+
+        .woehrl-logo {
+            width: 60%;
+        }
+        .zerbock-logo {
+            width: 40%;
+        }
+
+        .foerderbank-logo {
+            width: 30%;
+        }
+
+        .grundig-logo {
+            width: 31%;
+        }
+
+        .sattler_und_poetzsch-logo {
+            width: 38%;
+        }
+
+
+
+    }
+
+
+ }
+
+
 
 
 
@@ -510,7 +598,7 @@ h2 {
 
 
 @media screen and (max-width: 1440px){
-
+/*
 .fabercastell-logo {
     img {
         height: 43px;
@@ -553,7 +641,7 @@ h2 {
         height: 30px;
     }
 }
-
+ */
 
 }
 
@@ -561,7 +649,7 @@ h2 {
 
 @media screen and (max-width: 1180px){
 
-    .supporters {
+   /*  .supporters {
         > div {
             position: relative;
             float: left;
@@ -586,7 +674,7 @@ h2 {
             right: auto;
             height: 30px;
         }
-    }
+    } */
 
 }
 
@@ -595,8 +683,7 @@ h2 {
 
 @media screen and (max-width: 900px){
 
-    .supporters {
-
+    /* .supporters {
         a {
             height: auto;
         }
@@ -618,16 +705,8 @@ h2 {
         img {
             position: static;
         }
+    } */
 
-       /*  .credits {
-            width: 50%;
-            text-align: left;
-        }
-
-        .thanks {
-            width: 50%;
-        } */
-    }
 }
 
 
@@ -688,7 +767,7 @@ h2 {
         }
     }
 
-    .supporters {
+   /*  .supporters {
         margin-bottom: 0;
 
         .thanks {
@@ -698,17 +777,11 @@ h2 {
             width: 100%;
             margin-bottom: 50px;
         }
-    }
+    } */
 
 
 
 }
-
-
-
-
-
-
 
 
 
@@ -725,60 +798,3 @@ h2 {
 .clearfix:after {
     clear: both;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-
-.albrecht-20 {
-    font-family: 'albrecht-20';
-}
-
-.albrecht-30 {
-    font-family: 'albrecht-30';
-}
-
-.albrecht-40 {
-    font-family: 'albrecht-40';
-}
-
-.albrecht-50 {
-    font-family: 'albrecht-50';
-}
-
-.albrecht-60 {
-    font-family: 'albrecht-60';
-}
-
-.albrecht-70 {
-    font-family: 'albrecht-70';
-}
-
-.albrecht-80 {
-    font-family: 'albrecht-80';
-}
-
-.albrecht-90 {
-    font-family: 'albrecht-90';
-}
-
-.albrecht-101 {
-    font-family: 'albrecht-90';
-}
-
-.albrecht-inline {
-    font-family: 'albrecht-inline-50';
-}
-
- */

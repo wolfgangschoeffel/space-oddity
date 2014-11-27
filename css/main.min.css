@@ -320,80 +320,102 @@ p, ul {
       color: white;
       border-bottom: 1px solid white; }
 
-.supporters {
-  margin-bottom: 18px;
-  /*  a {
-        display: block;
-        width: 50%;
-        float: left;
-        opacity: 0.75;
-        background: red;
-        height: 50px;
+.fabercastell-logo img {
+  height: 48px; }
 
-        @include transition( opacity 0.2s ease );
-        &:hover {
-            opacity: 1;
-        }
-    } */ }
-  .supporters h2 {
-    font-family: 'albrecht-60'; }
-  .supporters > div {
-    position: relative;
-    float: left;
-    width: 33%;
-    height: 130px; }
-  .supporters .link-wrapper {
-    height: 60px;
-    bottom: 0;
-    position: absolute;
-    width: 100%; }
-  .supporters .credits {
-    width: 10%; }
-  .supporters .thanks {
-    width: 23%; }
+.nuernberg-logo img {
+  height: 48px; }
+
+.woehrl-logo img {
+  height: 29px; }
+
+.zerbock-logo img {
+  height: 43px; }
+
+.foerderbank-logo img {
+  height: 34px; }
+
+.grundig-logo img {
+  height: 15px; }
+
+.sattler_und_poetzsch-logo img {
+  height: 17px; }
+
+.unfun-logo img {
+  height: 21px; }
+
+.supporters h2 {
+  font-family: 'albrecht-60';
+  margin-bottom: 20px; }
+.supporters > div {
+  width: 100%; }
+.supporters img {
+  width: auto; }
+.supporters a {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px; }
+.supporters .link-wrapper {
+  margin-bottom: 20px; }
+
+@media screen and (min-width: 640px) {
   .supporters a {
-    display: block;
     position: relative;
-    height: 60px;
+    width: 50%;
+    float: left;
+    height: 100%;
     opacity: 0.75;
     -webkit-transition: opacity 0.2s ease;
     -moz-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease; }
     .supporters a:hover {
       opacity: 1; }
-  .supporters .fabercastell-logo, .supporters .nuernberg-logo, .supporters .woehrl-logo, .supporters .zerbock-logo {
-    width: 50%;
-    float: left; }
-  .supporters .foerderbank-logo, .supporters .unfun-logo {
-    width: 100%; }
-  .supporters .credits {
-    text-align: right; }
   .supporters img {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: auto; }
+    bottom: 0; }
+  .supporters .foerderbank-logo, .supporters .grundig-logo, .supporters .sattler_und_poetzsch-logo {
+    width: 33.3%; }
+  .supporters .link-wrapper {
+    height: 50px;
+    margin-bottom: 50px; } }
 
-.fabercastell-logo img {
-  height: 60px; }
+@media screen and (min-width: 900px) {
+  .supporters > div {
+    width: 50%;
+    float: left; }
+  .supporters .thanks {
+    width: 70%; }
+  .supporters .credits {
+    width: 30%;
+    text-align: right; }
+    .supporters .credits a {
+      float: right; }
+  .supporters .unfun-logo img {
+    left: auto;
+    right: 0; } }
 
-.nuernberg-logo img {
-  height: 60px; }
-
-.woehrl-logo img {
-  height: 40px; }
-
-.zerbock-logo img {
-  height: 60px; }
-
-.foerderbank-logo img {
-  height: 55px; }
-
-.unfun-logo img {
-  left: auto;
-  right: 0;
-  height: 38px; }
+@media screen and (min-width: 1500px) {
+  .supporters .permanent {
+    width: 27%; }
+  .supporters .further {
+    width: 22%; }
+  .supporters .thanks {
+    width: 42%; }
+  .supporters .credits {
+    text-align: right;
+    width: 9%; }
+    .supporters .credits a {
+      float: right; }
+  .supporters .woehrl-logo {
+    width: 60%; }
+  .supporters .zerbock-logo {
+    width: 40%; }
+  .supporters .foerderbank-logo {
+    width: 30%; }
+  .supporters .grundig-logo {
+    width: 31%; }
+  .supporters .sattler_und_poetzsch-logo {
+    width: 38%; } }
 
 /* SIDEBAR */
 .sidebar {
@@ -453,64 +475,24 @@ p, ul {
   -o-transform-origin: 0 0;
   transform-origin: 0 0; }
 
-@media screen and (max-width: 1440px) {
-  .fabercastell-logo img {
-    height: 43px; }
-  .nuernberg-logo img {
-    height: 43px; }
-  .woehrl-logo img {
-    height: 33px; }
-  .zerbock-logo img {
-    height: 43px; }
-  .foerderbank-logo img {
-    height: 44px; }
-  .unfun-logo img {
-    left: auto;
-    right: 0;
-    height: 30px; } }
+@media screen and (max-width: 1440px) { }
 
-@media screen and (max-width: 1180px) {
-  .supporters > div {
-    position: relative;
-    float: left;
-    width: 50%;
-    margin-bottom: 90px;
-    height: 100px; }
-  .supporters .credits {
-    width: 50%;
-    text-align: left; }
-  .supporters .thanks {
-    width: 50%; }
-  .unfun-logo img {
-    left: 0;
-    right: auto;
-    height: 30px; } }
+@media screen and (max-width: 1180px) { }
 
-@media screen and (max-width: 900px) {
-  .supporters {
-    /*  .credits {
-            width: 50%;
-            text-align: left;
-        }
-
-        .thanks {
-            width: 50%;
-        } */ }
-    .supporters a {
-      height: auto; }
-    .supporters h2 {
-      margin-bottom: 25px; }
-    .supporters > div {
-      float: none;
-      height: auto;
-      width: auto; }
-    .supporters .link-wrapper {
-      position: static;
-      height: auto; }
-    .supporters img {
-      position: static; } }
+@media screen and (max-width: 900px) { }
 
 @media screen and (max-width: 670px) {
+  /*  .supporters {
+        margin-bottom: 0;
+
+        .thanks {
+            width: 100%;
+        }
+        .credits {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    } */
   p, ul {
     font-size: 25px; }
   .wrapper {
@@ -540,14 +522,7 @@ p, ul {
     display: block;
     margin-bottom: 50px; }
     .kv-logo-h img {
-      max-width: 200px; }
-  .supporters {
-    margin-bottom: 0; }
-    .supporters .thanks {
-      width: 100%; }
-    .supporters .credits {
-      width: 100%;
-      margin-bottom: 50px; } }
+      max-width: 200px; } }
 
 /* HELPERS */
 .clearfix:before, .clearfix:after {
@@ -559,51 +534,6 @@ p, ul {
 .clearfix:after {
   clear: both; }
 
-/*
-
-
-
-.albrecht-20 {
-    font-family: 'albrecht-20';
-}
-
-.albrecht-30 {
-    font-family: 'albrecht-30';
-}
-
-.albrecht-40 {
-    font-family: 'albrecht-40';
-}
-
-.albrecht-50 {
-    font-family: 'albrecht-50';
-}
-
-.albrecht-60 {
-    font-family: 'albrecht-60';
-}
-
-.albrecht-70 {
-    font-family: 'albrecht-70';
-}
-
-.albrecht-80 {
-    font-family: 'albrecht-80';
-}
-
-.albrecht-90 {
-    font-family: 'albrecht-90';
-}
-
-.albrecht-101 {
-    font-family: 'albrecht-90';
-}
-
-.albrecht-inline {
-    font-family: 'albrecht-inline-50';
-}
-
- */
 /* ==========================================================================
    development-helpers.scss
    ========================================================================== */
