@@ -45,24 +45,29 @@ google.maps.event.addDomListener(window, 'load', initMap);
 
 
 function requestJSONP(url) {
-    var script = document.createElement('script');
-    script.src = url;
+    try {
+        var script = document.createElement('script');
+        script.src = url;
 
-    script.onload = function () {
-        this.remove();
-    };
+        script.onload = function () {
+            this.remove();
+        };
 
-    var head = document.getElementsByTagName('head')[0];
-    head.insertBefore(script, null);
+        var head = document.getElementsByTagName('head')[0];
+        head.insertBefore(script, null);
+    }catch(e){
+
+    }
+
 }
 
 
 function getCoordinates(){
-    var url = 'http://api.open-notify.org/iss-now.json?callback=move_iss';
+    var url = 'http://api.open-notify.org/iss-now.json?callback=iss.move';
     requestJSONP(url);
 }
 
-
+/*
 var iss = {};
 var before;
 
@@ -102,8 +107,9 @@ function move_iss(data){
     }
 
     function animate(){
+        console.log('animate');
         TWEEN.update();
-        window.setTimeout( animate, 100 );
+        window.setTimeout( animate, 2000 );
     }
 
     iss.lat = lat;
@@ -111,10 +117,98 @@ function move_iss(data){
 
     before = now;
 
-    setTimeout(getCoordinates, 5000);
+    setTimeout(getCoordinates, 10000);
 }
 
+*/
+
+// Gegeben:
+
+//  QueryTime: qt
+//  UpdateTime: ut
+//  iss.pos
+
+// v: (Iss.pos - Iss.lastpos) / querytime
+// v = s/t
+// s = v * t
+// follower-pos = follower.lastpos + (v * updateTime)
 
 
+var iss = {
+    lat: 0,
+    lng: 0,
+    lat0: undefined,
+    lng0: undefined,
+    queryInterval: 5000,
 
+    move: function(data){
+        console.log('move iss');
+        iss.lat = data.iss_position.latitude;
+        iss.lng = data.iss_position.longitude;
+
+        var now = Date.now();
+        var deltaT;
+        var deltaLat;
+        var deltaLng;
+
+        if( iss.lastTime ){
+            deltaT = now - iss.lastTime;
+            deltaLat = iss.lat - iss.lat0;
+            deltaLng = iss.lng - iss.lng0;
+
+            iss.vLat = deltaLat / deltaT;
+            iss.vLng = deltaLng / deltaT;
+
+            follower.start();
+
+        }else {
+            map.panTo(new google.maps.LatLng(iss.lat, iss.lng) );
+            classie.add(mapwrap, 'active');
+        }
+
+        iss.lat0 = iss.lat;
+        iss.lng0 = iss.lng;
+        iss.lastTime = now;
+
+        window.setTimeout(getCoordinates, this.queryInterval);
+    }
+};
+
+
+var follower = {
+    lat: 0,
+    lng: 0,
+    lat0: undefined,
+    lng0: undefined,
+    isActive: false,
+    updateIntervall: 1000,
+
+    start: function(){
+        if( ! this.isActive ){
+            console.log( 'start follower' );
+            this.isActive = true;
+            this.update();
+        }
+    },
+
+    update: function(){
+        console.log('move follower');
+        var now = Date.now();
+
+        if( follower.lastTime ){
+            var deltaT = now - follower.lastTime;
+            follower.lat = follower.lat0 + iss.vLat * deltaT;
+            follower.lng = follower.lng0 + iss.vLng * deltaT;
+        }else {
+            follower.lat = iss.lat;
+            follower.lng = iss.lng;
+        }
+
+        follower.lat0 = follower.lat;
+        follower.lng0 = follower.lng;
+        follower.lastTime = now;
+        map.panTo(new google.maps.LatLng(follower.lat, follower.lng) );
+        window.setTimeout(this.update.bind(this), this.updateIntervall);
+    }
+};
 
