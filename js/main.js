@@ -139,7 +139,7 @@ var iss = {
     lng: 0,
     lat0: undefined,
     lng0: undefined,
-    queryInterval: 5000,
+    queryInterval: 10000,
 
     move: function(data){
         console.log('move iss');
@@ -168,9 +168,14 @@ var iss = {
 
         iss.lat0 = iss.lat;
         iss.lng0 = iss.lng;
-        iss.lastTime = now;
 
-        window.setTimeout(getCoordinates, this.queryInterval);
+        if( iss.lastTime ){
+            window.setTimeout(getCoordinates, this.queryInterval);
+        }else {
+            window.setTimeout(getCoordinates, 500);
+        }
+
+        iss.lastTime = now;
     }
 };
 
@@ -181,7 +186,7 @@ var follower = {
     lat0: undefined,
     lng0: undefined,
     isActive: false,
-    updateIntervall: 100,
+    updateInterval: 100,
 
     start: function(){
         if( ! this.isActive ){
@@ -207,8 +212,13 @@ var follower = {
         follower.lat0 = follower.lat;
         follower.lng0 = follower.lng;
         follower.lastTime = now;
+
         map.panTo(new google.maps.LatLng(follower.lat, follower.lng) );
-        window.setTimeout(this.update.bind(this), this.updateIntervall);
+
+        display.lat.innerHTML = 'Lat:&nbsp;' + this.lat.toFixed(6);
+        display.lng.innerHTML = 'Long:&nbsp;' + this.lng.toFixed(6);
+
+        window.setTimeout(this.update.bind(this), this.updateInterval);
     }
 };
 
