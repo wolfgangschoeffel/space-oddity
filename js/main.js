@@ -186,7 +186,7 @@ var follower = {
     lat0: undefined,
     lng0: undefined,
     isActive: false,
-    updateInterval: 100,
+    updateInterval: 500,
 
     start: function(){
         if( ! this.isActive ){
