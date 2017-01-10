@@ -150,8 +150,8 @@ var follower = {
       this.lng = iss.lng;
     }
 
-    this.lat0 = follower.lat;
-    this.lng0 = follower.lng;
+    this.lat0 = this.lat;
+    this.lng0 = this.lng;
     this.lastTime = now;
 
     map.panTo(new google.maps.LatLng(this.lat, this.lng));
