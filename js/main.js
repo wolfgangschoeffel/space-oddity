@@ -67,61 +67,6 @@ function getCoordinates(){
     requestJSONP(url);
 }
 
-/*
-var iss = {};
-var before;
-
-function move_iss(data){
-    var now = Date.now();
-
-    lat = data.iss_position.latitude;
-    lng = data.iss_position.longitude;
-
-    if( iss.lat ){
-        iss.lat0 = iss.lat;
-        iss.lng0 = iss.lng;
-
-        var deltaT = now - before;
-
-        var deltaLat = iss.lat - iss.lat0;
-        var deltaLng = iss.lng - iss.lng0;
-
-        var tween = new TWEEN.Tween({lat: iss.lat0, lng: iss.lng0 })
-            .to( { lat: lat, lng: lng }, deltaT )
-            .onUpdate( function(){
-
-                //console.log( this.lat );
-                display.lat.innerHTML = 'Lat:&nbsp;' + this.lat.toFixed(6);
-                display.lng.innerHTML = 'Long:&nbsp;' + this.lng.toFixed(6);
-
-                map.panTo(new google.maps.LatLng(this.lat, this.lng) );
-
-            })
-            .start();
-
-        animate();
-
-    }else{
-        map.panTo(new google.maps.LatLng(lat, lng) );
-        classie.add(mapwrap, 'active');
-    }
-
-    function animate(){
-        console.log('animate');
-        TWEEN.update();
-        window.setTimeout( animate, 2000 );
-    }
-
-    iss.lat = lat;
-    iss.lng = lng;
-
-    before = now;
-
-    setTimeout(getCoordinates, 10000);
-}
-
-*/
-
 // Gegeben:
 
 //  QueryTime: qt
