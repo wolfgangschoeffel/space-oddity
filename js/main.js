@@ -16,9 +16,7 @@ function resize () {
 
 window.addEventListener('resize', dResize);
 
-window.addEventListener('load', function () {
-  resize();
-});
+window.addEventListener('load', resize);
 
 
 
