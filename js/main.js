@@ -86,39 +86,39 @@ var iss = {
 
   move: function (data) {
     console.log('move iss');
-    iss.lat = data.iss_position.latitude;
-    iss.lng = data.iss_position.longitude;
+    this.lat = data.iss_position.latitude;
+    this.lng = data.iss_position.longitude;
 
     var now = Date.now();
     var deltaT;
     var deltaLat;
     var deltaLng;
 
-    if (iss.lastTime) {
-      deltaT = now - iss.lastTime;
-      deltaLat = iss.lat - iss.lat0;
-      deltaLng = iss.lng - iss.lng0;
+    if (this.lastTime) {
+      deltaT = now - this.lastTime;
+      deltaLat = this.lat - this.lat0;
+      deltaLng = this.lng - this.lng0;
 
-      iss.vLat = deltaLat / deltaT;
-      iss.vLng = deltaLng / deltaT;
+      this.vLat = deltaLat / deltaT;
+      this.vLng = deltaLng / deltaT;
 
       follower.start();
 
     } else {
-      map.panTo(new google.maps.LatLng(iss.lat, iss.lng));
+      map.panTo(new google.maps.LatLng(this.lat, this.lng));
       classie.add(mapwrap, 'active');
     }
 
-    iss.lat0 = iss.lat;
-    iss.lng0 = iss.lng;
+    this.lat0 = this.lat;
+    this.lng0 = this.lng;
 
-    if (iss.lastTime) {
+    if (this.lastTime) {
       window.setTimeout(getCoordinates, this.queryInterval);
     } else {
       window.setTimeout(getCoordinates, 500);
     }
 
-    iss.lastTime = now;
+    this.lastTime = now;
   }
 };
 
@@ -143,20 +143,20 @@ var follower = {
     console.log('move follower');
     var now = Date.now();
 
-    if (follower.lastTime) {
-      var deltaT = now - follower.lastTime;
-      follower.lat = follower.lat0 + iss.vLat * deltaT;
-      follower.lng = follower.lng0 + iss.vLng * deltaT;
+    if (this.lastTime) {
+      var deltaT = now - this.lastTime;
+      this.lat = this.lat0 + iss.vLat * deltaT;
+      this.lng = this.lng0 + iss.vLng * deltaT;
     } else {
-      follower.lat = iss.lat;
-      follower.lng = iss.lng;
+      this.lat = iss.lat;
+      this.lng = iss.lng;
     }
 
-    follower.lat0 = follower.lat;
-    follower.lng0 = follower.lng;
-    follower.lastTime = now;
+    this.lat0 = follower.lat;
+    this.lng0 = follower.lng;
+    this.lastTime = now;
 
-    map.panTo(new google.maps.LatLng(follower.lat, follower.lng));
+    map.panTo(new google.maps.LatLng(this.lat, this.lng));
 
     display.lat.innerHTML = 'Lat:&nbsp;' + parseFloat(this.lat).toFixed(6);
     display.lng.innerHTML = 'Long:&nbsp;' + parseFloat(this.lng).toFixed(6);
