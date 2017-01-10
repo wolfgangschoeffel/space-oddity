@@ -160,8 +160,8 @@ var follower = {
 
         map.panTo(new google.maps.LatLng(follower.lat, follower.lng) );
 
-        display.lat.innerHTML = 'Lat:&nbsp;' + this.lat.toFixed(6);
-        display.lng.innerHTML = 'Long:&nbsp;' + this.lng.toFixed(6);
+        display.lat.innerHTML = 'Lat:&nbsp;' + parseFloat(this.lat).toFixed(6);
+        display.lng.innerHTML = 'Long:&nbsp;' + parseFloat(this.lng).toFixed(6);
 
         window.setTimeout(this.update.bind(this), this.updateInterval);
     }
