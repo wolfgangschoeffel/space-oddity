@@ -80,8 +80,8 @@ function getCoordinates () {
 var iss = {
   lat: 0,
   lng: 0,
-  lat0: undefined,
-  lng0: undefined,
+  lat0: (void 0),
+  lng0: (void 0),
   queryInterval: 10000,
 
   move: function (data) {
@@ -126,8 +126,8 @@ var iss = {
 var follower = {
   lat: 0,
   lng: 0,
-  lat0: undefined,
-  lng0: undefined,
+  lat0: (void 0),
+  lng0: (void 0),
   isActive: false,
   updateInterval: 500,
 
