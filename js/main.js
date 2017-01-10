@@ -84,8 +84,9 @@ var iss = {
 
   move: function (data) {
     console.log('move iss');
-    this.lat = data.iss_position.latitude;
-    this.lng = data.iss_position.longitude;
+
+    this.lat = parseFloat(data.iss_position.latitude);
+    this.lng = parseFloat(data.iss_position.longitude);
 
     var now = Date.now();
     var deltaT;
@@ -142,10 +143,13 @@ var follower = {
     var now = Date.now();
 
     if (this.lastTime) {
+
       var deltaT = now - this.lastTime;
       this.lat = this.lat0 + iss.vLat * deltaT;
       this.lng = this.lng0 + iss.vLng * deltaT;
+
     } else {
+
       this.lat = iss.lat;
       this.lng = iss.lng;
     }
@@ -156,8 +160,8 @@ var follower = {
 
     map.panTo(new google.maps.LatLng(this.lat, this.lng));
 
-    display.lat.innerHTML = 'Lat:&nbsp;' + parseFloat(this.lat).toFixed(6);
-    display.lng.innerHTML = 'Long:&nbsp;' + parseFloat(this.lng).toFixed(6);
+    display.lat.innerHTML = 'Lat:&nbsp;' + this.lat.toFixed(6);
+    display.lng.innerHTML = 'Long:&nbsp;' + this.lng.toFixed(6);
 
     window.setTimeout(this.update.bind(this), this.updateInterval);
   }
