@@ -36,8 +36,6 @@ function initMap () {
   });
 }
 
-googleMapsApiLoader.load(initMap)
-
 
 
 
@@ -167,3 +165,5 @@ var follower = {
   }
 };
 
+
+initMap();
