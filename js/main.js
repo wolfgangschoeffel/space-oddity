@@ -158,6 +158,11 @@ var follower = {
 
     map.panTo(new google.maps.LatLng(this.lat, this.lng));
 
+    console.log('typeof this.lat', typeof this.lat);
+    console.log('this.lat', this.lat);
+    console.log('typeof this.lng', typeof this.lng);
+    console.log('this.lng', this.lng);
+
     display.lat.innerHTML = 'Lat:&nbsp;' + this.lat.toFixed(6);
     display.lng.innerHTML = 'Long:&nbsp;' + this.lng.toFixed(6);
 
