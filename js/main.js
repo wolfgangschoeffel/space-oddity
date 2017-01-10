@@ -2,7 +2,6 @@ var vpW, vpH;
 var noop = function(){};
 var dResize = _.debounce(resize, 500);
 
-
 var mapwrap = document.getElementById('map-wrapper');
 
 var display = {
@@ -39,7 +38,7 @@ function initMap() {
     });
 }
 
-google.maps.event.addDomListener(window, 'load', initMap);
+googleMapsApiLoader.load(initMap)
 
 
 

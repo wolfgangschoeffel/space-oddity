@@ -9,6 +9,7 @@ module.exports = function(grunt) {
                 'js/classie.js',
                 'js/transition.js',
                 'js/tween.js',
+                'js/googleMapsApiLoader.js',
                 'js/main.js'
             ],
         },
