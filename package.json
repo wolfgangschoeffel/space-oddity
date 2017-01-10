@@ -13,7 +13,6 @@
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-modernizr": "^1.0.2",
     "grunt-sass": "^2.0.0",
     "node-bourbon": "^4.2.8"
   }
