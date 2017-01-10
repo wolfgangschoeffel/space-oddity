@@ -6,11 +6,7 @@ module.exports = function(grunt) {
         config : {
             scripts: [
                 'js/lodash.js',
-                //'js/map-range.js',
                 'js/classie.js',
-                //'js/gator.js',
-                //'js/easing.js',
-                //'js/animated-scroll.js',
                 'js/transition.js',
                 'js/tween.js',
                 'js/main.js'
